@@ -1,0 +1,26 @@
+Measurement:
+  name: string
+  volume: integer
+  abbreviation: string
+
+Store:
+  name: string
+  address: string
+
+User:
+  username: string
+  password: string
+  email: string
+  name: string
+
+Ingredient:
+  name: string
+  price: integer
+  standard_unit: integer
+
+ShoppingList:
+  name: string
+  ingredient_id: integer
+  price: integer
+  amount: integer
+  comment: text
