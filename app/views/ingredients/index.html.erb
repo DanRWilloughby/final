@@ -1,0 +1,6 @@
+<h1>List of Ingredients!</h1>
+<p><a href="Ingredients/new" class="btn btn-primary">Create a new ingredient here!</a></p>
+
+<% @ingredients.each do |ingredient| %>
+  <p><a href="/ingredients/<%= ingredient.id %>"><%= ingredient.name %></a> </p>
+ <% end %>
