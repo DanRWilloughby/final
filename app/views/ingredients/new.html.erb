@@ -1,0 +1,13 @@
+<h1 class="page-header"> Create a new Ingredient </h1>
+
+<%= form_for @ingredient do |form| %>
+  <div class="form-group">
+    <%= form.label :name %>
+    <%= form.text_field :name, class: "form-control" %>
+    <%= form.label :price %>
+    <%= form.text_field :price, class: "form-control" %>
+    <%= form.label :standard_unit %>
+    <%= form.text_field :standard_unit, class: "form-control" %>
+  </div>
+  <%= form.button 'Create Ingredient', class: "btn btn-success" %>
+<% end %>

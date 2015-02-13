@@ -1,6 +1,15 @@
-<h1>List of Ingredients!</h1>
-<p><a href="Ingredients/new" class="btn btn-primary">Create a new ingredient here!</a></p>
+<h3 class="page-header">
+  List of Ingredients
+</h3>  
+
+<%= link_to "Create a new ingredient", new_ingredient_path, class: "btn btn-sm btn-success"%>
+<p></p>
 
 <% @ingredients.each do |ingredient| %>
-  <p><a href="/ingredients/<%= ingredient.id %>"><%= ingredient.name %></a> </p>
+
+<dl class="dl-horizontal">
+  <dt><%= link_to ingredient.name, ingredient_path(ingredient) %></dt>
+  <dd><%= link_to "  Edit", edit_ingredient_path(ingredient) %><%= link_to " Delete", ingredient_path(ingredient), method: :delete, data: { confirm: "Are you really really really sure" }%></dd>
+</dl>
+
  <% end %>
