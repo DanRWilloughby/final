@@ -13,9 +13,12 @@ class IngredientsController < ApplicationController
   end
 
   def create
-    ingredient_params = params.require(:ingredient).permit(:name, :price, :standard_price)
-    Ingredient.create(ingredient_params)
-    redirect_to ingredients_path
+    ingredient_params = params.require(:ingredient).permit!
+    @ingredient = Ingredient.new(ingredient_params)
+    if @ingredient.save
+      redirect_to ingredients_path
+    else
+      render text: "FAIL"
   end
 
   def edit
@@ -34,5 +37,5 @@ class IngredientsController < ApplicationController
     @ingredient.destroy
     redirect_to ingredients_path
   end
-
+end
 end

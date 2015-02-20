@@ -16,7 +16,7 @@ User:
 Ingredient:
   name: string
   price: integer
-  standard_unit: integer
+  measurement_id: integer
 
 ShoppingList:
   name: string

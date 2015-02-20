@@ -16,11 +16,11 @@ bar = Measurement.create(name: "Bar", volume: "1", abbreviation: "nil")
 
 # Create the Ingredients
 puts "Creating Ingredients..."
-flower = Ingredient.create(name: "Flower", price: "3.99", standard_unit: cup.name)
-sugar = Ingredient.create(name: "Sugar", price: "3.99", standard_unit: cup.name)
-chocolate = Ingredient.create(name: "Chocolate", price: "5.99", standard_unit: bar.name)
-bakingpowder = Ingredient.create(name: "Baking Powder", price: "4.99", standard_unit: ounce.name)
-salt = Ingredient.create(name: "Salt", price: "1.99", standard_unit: "oz")
+flower = Ingredient.create(name: "Flower", price: "3.99", measurement_id: cup.id)
+sugar = Ingredient.create(name: "Sugar", price: "3.99", measurement_id: cup.id)
+chocolate = Ingredient.create(name: "Chocolate", price: "5.99", measurement_id: bar.id)
+bakingpowder = Ingredient.create(name: "Baking Powder", price: "4.99", measurement_id: ounce.id)
+salt = Ingredient.create(name: "Salt", price: "1.99", measurement_id: ounce.id)
 
 # Create the Stores
 puts "Creating Stores..."

@@ -1,13 +1,28 @@
+<% if @ingredient.errors.any? %>
+  <div class="alert alert-warning">
+    <h2>Some errors kept this ingredient from being saved:</h2>
+    <ul>
+      <% @ingredient.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <h1 class="page-header"> Create a new Ingredient </h1>
 
 <%= form_for @ingredient do |form| %>
   <div class="form-group">
     <%= form.label :name %>
     <%= form.text_field :name, class: "form-control" %>
+  </div>
+  <div class="form-group">
     <%= form.label :price %>
     <%= form.text_field :price, class: "form-control" %>
-    <%= form.label :standard_unit %>
-    <%= form.text_field :standard_unit, class: "form-control" %>
+  </div>
+  <div class="form-group">  
+    <%= form.label :measurement_id %>
+    <%= form.collection_select :measurement_id, Measurement.order(:name), :id, :name, { include_blank: true }, { class: "form-control" } %>
   </div>
   <%= form.button 'Create Ingredient', class: "btn btn-success" %>
 <% end %>

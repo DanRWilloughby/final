@@ -16,8 +16,10 @@ ActiveRecord::Schema.define(version: 0) do
   create_table "ingredients", force: :cascade do |t|
     t.string  "name"
     t.integer "price"
-    t.integer "standard_unit"
+    t.integer "measurement_id"
   end
+
+  add_index "ingredients", ["measurement_id"], name: "index_ingredients_on_measurement_id"
 
   create_table "measurements", force: :cascade do |t|
     t.integer "volume"
