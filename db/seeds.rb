@@ -40,11 +40,11 @@ jesus = User.create(name: "Jesus", username: "IwillReturn", password: "ButWhen",
 
 # Create the ShoppingList
 puts "Creating ShoppingList..."
-Item1 = ShoppingList.create(name: "Flower", ingredient_id: flower.id, price: flower.price, amount: "3", comment: "Use in multiple recipes so aggregated sum")
-Item2 = ShoppingList.create(name: "Sugar", ingredient_id: sugar.id, price: sugar.price, amount: "2", comment: "Sugar is critical for cookies")
-Item3 = ShoppingList.create(name: "Chocolate", ingredient_id: chocolate.id, price: chocolate.price, amount: "6", comment: "Use a mixture of dark and milk chocolate")
-Item4 = ShoppingList.create(name: "Baking Powder", ingredient_id: bakingpowder.id, price: bakingpowder.price, amount: "8", comment: "For baking")
-Item5 = ShoppingList.create(name: "Salt", ingredient_id: salt.id, price: salt.price, amount: "1", comment: "Salt gives everything more taste")
+Item1 = ShoppingList.create(name: "Flower", ingredient_id: flower.id, price: flower.price, amount: "3", comment: "Use in multiple recipes so aggregated sum", user_id: dan.id)
+Item2 = ShoppingList.create(name: "Sugar", ingredient_id: sugar.id, price: sugar.price, amount: "2", comment: "Sugar is critical for cookies", user_id: dan.id)
+Item3 = ShoppingList.create(name: "Chocolate", ingredient_id: chocolate.id, price: chocolate.price, amount: "6", comment: "Use a mixture of dark and milk chocolate", user_id: dan.id)
+Item4 = ShoppingList.create(name: "Baking Powder", ingredient_id: bakingpowder.id, price: bakingpowder.price, amount: "8", comment: "For baking", user_id: dan.id)
+Item5 = ShoppingList.create(name: "Salt", ingredient_id: salt.id, price: salt.price, amount: "1", comment: "Salt gives everything more taste", user_id: dan.id)
 
 puts "There are now #{ShoppingList.count} Items in the Shopping List, consisting of #{Ingredient.count} Ingredients, #{Store.count} stores, #{User.count} Users, and #{Measurement.count} Measurments in the database."
 # This file should contain all the record creation needed to seed the database with its default values.

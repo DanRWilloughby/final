@@ -1,4 +1,5 @@
 class IngredientsController < ApplicationController
+    skip_before_action :require_user, only: [:index, :show]
 
   def index
     @ingredients = Ingredient.all
@@ -19,6 +20,7 @@ class IngredientsController < ApplicationController
       redirect_to ingredients_path
     else
       render text: "FAIL"
+    end
   end
 
   def edit
@@ -38,4 +40,4 @@ class IngredientsController < ApplicationController
     redirect_to ingredients_path
   end
 end
-end
+

@@ -1,0 +1,37 @@
+<h1>New User</h1>
+
+<% if @user.errors.any? %>
+  <div class="alert alert-warning">
+    <h6>Some errors kept this user from being saved:</h6>
+    <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <font size="1"><li><%= message %></li></font>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= form_for @user do |form| %>
+  <div class="form-group">
+    <%= form.label :name %>
+    <%= form.text_field :name, class: "form-control" %>
+    </div>
+
+  <div class="form-group">
+    <%= form.label :email %>
+    <%= form.text_field :email, class: "form-control" %>
+      </div>
+
+  <div class="form-group">
+    <%= form.label :password %>
+    <%= form.text_field :password, class: "form-control" %>
+    </div>
+
+  <div class="form-group">
+    <%= form.label :username %>
+    <%= form.text_field :username, class: "form-control" %>
+    </div>
+
+  <%= form.button 'Create User', class: "btn btn-success" %>
+  <% end %>
+

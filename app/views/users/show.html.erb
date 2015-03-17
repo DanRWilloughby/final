@@ -1,0 +1,14 @@
+<h1><%= @user.name %>'s Shopping Lists</h1>
+
+
+<ul>
+  <p>
+    <h4>
+  <% @shopping_list.each do |shopping_list| %>
+  <%= link_to shopping_list.shopping_list_name, shopping_list_path(shopping_list) %> 
+  </h4>
+</p>
+</ul>
+
+
+<% end %>
